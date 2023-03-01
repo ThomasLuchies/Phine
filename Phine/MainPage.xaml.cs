@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Phine.SQL;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -13,7 +14,6 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// The Blank Page item template is documented at https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
 
 namespace Phine
 {
@@ -22,9 +22,12 @@ namespace Phine
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        private MySQLClient MySQLClient;
         public MainPage()
         {
             this.InitializeComponent();
+            MySQLClient = new MySQLClient();
+            MySQLClient.OpenSQLConnection();
         }
     }
 }
